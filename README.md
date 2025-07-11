@@ -29,3 +29,24 @@ This project is designed to help beginners and enthusiasts learn about real-time
 | Breadboard       | Circuit assembly                   |
 | Jumper Wires     | Connections                        |
 | Battery (9V)     | Optional portable power source     |
+
+
+## ThingSpeak Integration
+
+1. Create a free account at [thingspeak.com](https://thingspeak.com).
+2. Create a new channel and enable "Field 1" as BPM.
+3. Copy the **Channel ID** and **Write API Key**.
+4. In the `send_to_thingspeak.ino` sketch:
+   - Enter your Wi-Fi SSID and password
+   - Paste your ThingSpeak credentials
+5. Upload the code to an ESP8266 board (like NodeMCU).
+6. View live BPM values on your ThingSpeak dashboard.
+
+## Python Serial Logging
+
+The Python script provided reads data from the Arduino or HC-05 Bluetooth module and logs it to a CSV file with timestamps.
+
+**How to use:**
+
+1. Set your serial port in `pulse_receiver.py` (e.g., `COM4` or `/dev/ttyUSB0`).
+2. Run the script using Python 3:
