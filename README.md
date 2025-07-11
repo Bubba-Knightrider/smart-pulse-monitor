@@ -50,3 +50,20 @@ The Python script provided reads data from the Arduino or HC-05 Bluetooth module
 
 1. Set your serial port in `pulse_receiver.py` (e.g., `COM4` or `/dev/ttyUSB0`).
 2. Run the script using Python 3:
+3. Output will be saved in `bpm_log.csv` automatically.
+
+## How It Works
+
+- The Pulse Sensor outputs an analog waveform representing heartbeats.
+- An Arduino interrupt routine reads the signal every 2 milliseconds.
+- It detects heartbeat peaks, measures time between beats (IBI), and calculates BPM.
+- BPM is averaged over the last 10 readings to improve accuracy.
+- The result is shown on an LCD, sent via serial, or uploaded to the cloud.
+
+## Possible Extensions
+
+- OLED display for waveform visualization
+- Mobile app using MIT App Inventor or Python Kivy
+- Firebase integration or REST API endpoint
+- SD card-based offline data logging
+- Machine learning on logged data for health monitoring
